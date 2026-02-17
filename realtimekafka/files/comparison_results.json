@@ -1,0 +1,20 @@
+{
+  "per_event": {
+    "method": "per_event",
+    "processed": 200000,
+    "time_sec": 5.44180937501369,
+    "rate": 36752.48179737954,
+    "users_tracked": 10000
+  },
+  "microbatch": {
+    "method": "microbatch",
+    "processed": 203629,
+    "time_sec": 4.4285633330000564,
+    "rate": 45980.82598991645,
+    "users_tracked": 10000,
+    "batches": 41,
+    "avg_batch_ms": 7.755141221867056
+  },
+  "speedup": 1.2510944497140024,
+  "max_events": 200000
+}
