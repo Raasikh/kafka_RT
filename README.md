@@ -135,10 +135,6 @@ Even conservatively, this easily handles 80M+ events/day.
 ### What about Spark Structured Streaming?
 > "Same principle — each micro-batch is a DataFrame. We could use Spark for heavier transforms or when data volume requires distributed processing. For this scale, single-node Polars was sufficient and simpler to operate."
 
-### How to narrate in an interview
-
-> "Our feature pipeline was falling behind as event volume grew. Per-event processing had too much Python overhead — deserialization, dict lookups, and individual writes per record. I switched to Kafka micro-batching: poll batches of 5000 events, convert to a Polars DataFrame (Arrow-backed columnar format), and run all feature transforms as vectorized operations in Rust. The same groupbys, aggregations, and derived features that took seconds per-event finished in milliseconds per batch. That let us scale from ~15k to 80k+ events/sec per consumer, and with parallel consumers matching our partition count, we comfortably handled 80M+ events/day while keeping feature freshness under our SLA."
-
 ## Producer Tuning Explained
 
 | Setting | Value | Why |
